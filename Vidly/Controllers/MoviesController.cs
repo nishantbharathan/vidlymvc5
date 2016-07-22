@@ -4,14 +4,26 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
-using Vidly.ViewModels; 
-
+using Vidly.ViewModels;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
 	public class MoviesController : Controller
 	{
 
+
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
 
         public ActionResult Index()
         {
@@ -23,16 +35,19 @@ namespace Vidly.Controllers
 
         private IEnumerable<Movie> GetMovies()
         {
-            return new List<Movie>
-            {
-
-                new Movie(){Id="1",Name="Tridev"},
-                new Movie(){Id="2",Name="Trimurti"}
-
-            };
-
+            return _context.Movies.Include(m => m.Genre);
         }
 
+
+        public ActionResult Details(int id)
+        {
+            var movie = GetMovies().SingleOrDefault(c => c.Id == id);
+
+            if (movie == null)
+                return new HttpNotFoundResult();
+
+            return View(movie);
+        }
 
 
 		//
