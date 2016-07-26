@@ -86,9 +86,8 @@ namespace Vidly.Controllers
 		//
 		// GET: /Customer/
 		public ActionResult Index()               
-		{
-			var Customers = GetCustomers();
-			return View(Customers);
+		{			
+			return View();
 		}
 
 		public ActionResult Details(int id)
