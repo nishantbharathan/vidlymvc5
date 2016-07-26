@@ -21,7 +21,8 @@ namespace Vidly.Controllers
 		{
 			var CustomerFormViewModel = new CustomerFormViewModel()
 			{
-				MemberShipTypes = _context.MemberShipTypes.ToList()
+				MemberShipTypes = _context.MemberShipTypes.ToList(),
+                Customer = new Customer()
 			};
 
 			return View("CustomerForm",CustomerFormViewModel);
@@ -43,9 +44,22 @@ namespace Vidly.Controllers
 
         }
 
+        [ValidateAntiForgeryToken]
 		[HttpPost]
 		public ActionResult Save(Customer customer)
 		{
+
+            if(!ModelState.IsValid)
+            {
+                var CustomerViewModel = new CustomerFormViewModel()
+                {
+                    Customer = customer,
+                    MemberShipTypes = _context.MemberShipTypes.ToList()
+
+                };
+
+                return View("CustomerForm", CustomerViewModel);
+            }
 
             if(customer.ID==0)
             {
@@ -63,7 +77,7 @@ namespace Vidly.Controllers
 
 			
 			_context.SaveChanges();
-			return RedirectToAction("Index");
+			return RedirectToAction("Index","Customers");
 		}
 		protected override void Dispose(bool disposing)
 		{
