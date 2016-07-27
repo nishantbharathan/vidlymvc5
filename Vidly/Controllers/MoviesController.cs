@@ -91,10 +91,8 @@ namespace Vidly.Controllers
 
         public ActionResult Index()
         {
-
-            var movies = GetMovies();
-
-            return View(movies);
+           
+            return View();
         }
 
         private IEnumerable<Movie> GetMovies()

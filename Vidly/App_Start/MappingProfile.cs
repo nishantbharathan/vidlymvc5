@@ -21,6 +21,7 @@ namespace Vidly.App_Start
 
 
             Mapper.CreateMap<MemberShipType,MemberShipTypeDTO >();
+            Mapper.CreateMap<Genre, GenreDTO>();
         }
 
     }

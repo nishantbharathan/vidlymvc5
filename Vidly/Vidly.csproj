@@ -182,6 +182,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Dtos\CustomerDTO.cs" />
+    <Compile Include="Dtos\GenreDTO.cs" />
     <Compile Include="Dtos\MemberShipTypeDTO.cs" />
     <Compile Include="Dtos\MovieDTO.cs" />
     <Compile Include="Global.asax.cs">
