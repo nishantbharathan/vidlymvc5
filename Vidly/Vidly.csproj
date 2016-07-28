@@ -193,6 +193,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\api\CustomersController.cs" />
     <Compile Include="Controllers\api\MoviesController.cs" />
+    <Compile Include="Controllers\api\NewRentalsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
@@ -200,6 +201,7 @@
     <Compile Include="Dtos\GenreDTO.cs" />
     <Compile Include="Dtos\MemberShipTypeDTO.cs" />
     <Compile Include="Dtos\MovieDTO.cs" />
+    <Compile Include="Dtos\RentalDTO.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -260,6 +262,10 @@
     <Compile Include="Migrations\201607280816042_AddPhoneToUser.Designer.cs">
       <DependentUpon>201607280816042_AddPhoneToUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607281322047_AddRentalTableandNumberAvailable.cs" />
+    <Compile Include="Migrations\201607281322047_AddRentalTableandNumberAvailable.Designer.cs">
+      <DependentUpon>201607281322047_AddRentalTableandNumberAvailable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -272,6 +278,7 @@
     <Compile Include="Models\Min18YearsForMemberShip.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -563,6 +570,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607280816042_AddPhoneToUser.resx">
       <DependentUpon>201607280816042_AddPhoneToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607281322047_AddRentalTableandNumberAvailable.resx">
+      <DependentUpon>201607281322047_AddRentalTableandNumberAvailable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
