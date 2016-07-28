@@ -12,6 +12,7 @@ using Vidly.Dtos;
 
 namespace Vidly.Controllers.api
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class MoviesController : ApiController
     {
 
