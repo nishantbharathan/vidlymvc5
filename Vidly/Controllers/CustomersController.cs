@@ -85,6 +85,7 @@ namespace Vidly.Controllers
 		}
 		//
 		// GET: /Customer/
+  
 		public ActionResult Index()               
 		{			
 			return View();

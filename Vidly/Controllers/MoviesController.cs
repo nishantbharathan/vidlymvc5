@@ -78,6 +78,7 @@ namespace Vidly.Controllers
 
         }
 
+
         [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
@@ -90,6 +91,7 @@ namespace Vidly.Controllers
             
         }
 
+        //[OutputCache(Duration=50,Location=System.Web.UI.OutputCacheLocation.Server)]
         public ActionResult Index()
         {
             if (User.IsInRole(RoleName.CanManageMovies))
