@@ -11,6 +11,10 @@ namespace Vidly.Models
         [Required]
         [Display(Name = "Driving Licence")]
         public string DrivingLicence { get; set; }
+
+
+        [Required]  
+        public string Phone { get; set; }
     }
 
     public class ManageUserViewModel
@@ -49,6 +53,9 @@ namespace Vidly.Models
 
     public class RegisterViewModel
     {
+
+        [Required]
+        public string Phone { get; set; }
 
         [Required]
         [Display(Name = "Driving Licence")]
