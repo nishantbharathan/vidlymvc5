@@ -7,6 +7,10 @@ namespace Vidly.Models
         [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }
+
+        [Required]
+        [Display(Name = "Driving Licence")]
+        public string DrivingLicence { get; set; }
     }
 
     public class ManageUserViewModel
